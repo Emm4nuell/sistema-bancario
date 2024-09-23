@@ -1,44 +1,44 @@
 <div class="container mt-5 d-flex justify-content-center">
     <div>
         <h1>Novo Cliente</h1>
-        <form class="example-form mt-4">
+        <form class="example-form mt-4" (ngSubmit)="createClient()">
 
             <div class="mb-2">
               <label for="exampleInputNome1" class="form-label">Seu nome</label>
-              <input type="text" class="form-control" id="exampleInputNome1" aria-describedby="nomeHelp">
+              <input type="text" class="form-control" id="exampleInputNome1" name="nome" [(ngModel)]="cliente.nome" aria-describedby="nomeHelp">
               <div id="nomeHelp" class="form-text">Campo obrigatório</div>
             </div>
 
             <div class="mb-2">
                 <label for="exampleInputEmail1" class="form-label">Digite seu email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="email" class="form-control" id="exampleInputEmail1" name="email" [(ngModel)]="cliente.email" aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text">Campo obrigatório</div>
             </div>
 
             <div class="mb-2">
                 <label for="exampleInputCpf1" class="form-label">Cpf</label>
-                <input type="text" class="form-control" id="exampleInputCpf1" aria-describedby="cpfHelp">
+                <input type="text" class="form-control" id="exampleInputCpf1" name="cpf" [(ngModel)]="cliente.cpf" aria-describedby="cpfHelp">
                 <div id="cpfHelp" class="form-text">Campo obrigatório</div>
             </div>
 
             <div class="form-floating">
-                <textarea class="form-control" placeholder="Observações" id="floatingTextarea"></textarea>
+                <textarea class="form-control" placeholder="Observações" name="observacoes" [(ngModel)]="cliente.observacoes" id="floatingTextarea"></textarea>
                 <label for="floatingTextarea">Observações</label>
             </div>
 
             <div class="mb-2 row">
                 <div class="mb-1 form-check col">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <input type="checkbox" [checked]="true" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Ativo</label>
                 </div>
                   <div class="mb-1 form-check col">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <input type="checkbox" [checked]="false" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Inativo</label>
                 </div>
             </div>
             <!--Botao de submissao do formulario-->
             <div>
-                <button type="button" class="btn btn-primary ">Cadastrar</button>
+                <button type="submit" class="btn btn-primary ">Cadastrar</button>
             </div>
           </form>
     </div>
